@@ -1,0 +1,36 @@
+name: Bugs
+description: 上报问题与 Bugs.
+title: "[问题/BUG] <title>"
+labels: [bug]
+body:
+- type: checkboxes
+  attributes:
+    label: 开始之前，请检查以下内容。
+    description: 确保你已经充分地查看过了下面的选项，之后再进行选择。
+    options:
+    - label: 我保证，没有重复的 Issue。
+      required: true
+    - label: 我保证，已经阅读过文档和 Discussions，没有重复的问题。
+      required: true
+    - label: 我保证，以下的内容没有诱惑、故意描述不清的内容。
+      required: true
+- type: dropdown
+  attributes:
+    label: 是否已经阅读过源码？
+    description: 确保你已经充分地查看过了下面的选项，之后再进行选择。
+    options:
+      - 我还没有阅读过源码。
+      - 我阅读了源码，但是我不知道 问题/BUG 出现在哪里。
+      - 我阅读了源码，并且大概知道 问题/BUG 出现在哪里。
+      - 我阅读了源码，并且确切地知道 问题/BUG 出现在哪里，但是我不会修复。
+      - [这种情况，请发起 Pull Request] 我阅读了源码，并且确切地知道 问题/BUG 出现在哪里，还会修复。
+  validations:
+    required: true
+- type: textarea
+  attributes: 
+    label: 问题出现在源码的什么位置？
+    description: 若你的上一个问题选择了后三个选项当中一个，则须认真填写该段。否则，你可以填入任何内容。
+    value: |
+      这个问题出现在源码 [文件] 中的 第 [no.] 行 第 [no.] 列。
+  validations:
+    required: true
